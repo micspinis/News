@@ -1,8 +1,13 @@
 import React from 'react';
 // La forma de utilizar los styles en los modules es importandolas a un objeto
 import styles from './Formulario.module.css';
+import useSelect from '../hooks/useSelect';
 
 const Formulario = () => {
+
+    // Utilizando custom hook
+    const [ categoria, SelectNoticias ] = useSelect();
+
     return (
         // Combinacion de dos fuentes distintas de estilos 
         <div className={`${styles.buscador} row`}>
@@ -10,6 +15,9 @@ const Formulario = () => {
                 <form>
                     {/* Usando styles desde nuestro module */}
                     <h2 className={styles.heading}>Encuentra noticias por categoria</h2>
+
+                    <SelectNoticias />
+
                     <div className="input-field col s12">
                         <input 
                             type="submit"
