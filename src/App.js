@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Header from './componentes/Header';
+import Formulario from './componentes/Formulario';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       />
 
       <div className="container white">
-        <h1>Formulario aqui!</h1>
+        <Formulario />
       </div>
     </Fragment>
   );
