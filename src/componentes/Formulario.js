@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Formulario.module.css';
 import useSelect from '../hooks/useSelect';
 
-const Formulario = () => {
+const Formulario = ({guardarCategoria}) => {
 
     // Creando opciones 
     const OPCIONES = [
@@ -19,11 +19,21 @@ const Formulario = () => {
     // Utilizando custom hook
     const [ categoria, SelectNoticias ] = useSelect('science', OPCIONES);
 
+    // submit al form, pasar categoria a app.js
+    const buscarNoticias = e => {
+        e.preventDefault();
+
+        guardarCategoria(categoria);
+    }
+     
+
     return (
         // Combinacion de dos fuentes distintas de estilos 
         <div className={`${styles.buscador} row`}>
             <div className="col s12 m8 offset-m2">
-                <form>
+                <form
+                    onSubmit={buscarNoticias}
+                >
                     {/* Usando styles desde nuestro module */}
                     <h2 className={styles.heading}>Encuentra noticias por categoria</h2>
 
