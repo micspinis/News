@@ -2,6 +2,7 @@ import React from 'react';
 // La forma de utilizar los styles en los modules es importandolas a un objeto
 import styles from './Formulario.module.css';
 import useSelect from '../hooks/useSelect';
+import PropTypes from 'prop-types';
 
 const Formulario = ({guardarCategoria}) => {
 
@@ -51,6 +52,10 @@ const Formulario = ({guardarCategoria}) => {
             </div>
         </div>
      );
+}
+
+Formulario.propTypes = {
+    guardarCategoria: PropTypes.func.isRequired
 }
  
 export default Formulario;
